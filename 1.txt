@@ -1,0 +1,26 @@
+#include <iostream> 
+#include <algorithm>
+using namespace std;
+ 
+int main()
+{
+	int m[12] = {10,8,9,9,11,5,8,7,7,6,12,10};
+ 
+	for (int i = 0; i < 12; i++)
+	{
+		int f = i;
+ 
+		for (int n = i + 1; n < 12; n++) 
+		{
+			if (m[n] < m[f]) 
+			{
+				f = n; 
+			}
+		}
+		std::swap(m[i], m[f]);
+	}
+	for (int a = 0; a < 12; a++) {
+		cout << m[a] << ' ';
+	}
+	return 0;
+}
